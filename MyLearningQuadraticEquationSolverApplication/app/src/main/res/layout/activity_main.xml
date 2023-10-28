@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
+        <variable
+            name="myEquation"
+            type="com.example.mylearningquadraticequationsolverapplication.MyEquation" />
+        
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3600"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quadratic Equation Solver!"
+            android:textAlignment="center"
+            android:textSize="36dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.081" />
+
+        <TextView
+            android:id="@+id/textViewA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="A:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@={myEquation.a}"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewA"
+            app:layout_constraintStart_toEndOf="@+id/textViewA"
+            app:layout_constraintTop_toTopOf="@+id/textViewA" />
+
+        <TextView
+            android:id="@+id/textViewB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="B:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewA" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@={myEquation.b}"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewB"
+            app:layout_constraintStart_toEndOf="@+id/textViewB"
+            app:layout_constraintTop_toTopOf="@+id/textViewB" />
+
+        <TextView
+            android:id="@+id/textViewC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="36dp"
+            android:text="C:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewB" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="84dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@={myEquation.c}"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewC"
+            app:layout_constraintStart_toEndOf="@+id/textViewC"
+            app:layout_constraintTop_toTopOf="@+id/textViewC" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="36dp"
+            android:onClick="@{myEquation::solveEquation}"
+            android:text="Solve!"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="@={myEquation.result}"
+            android:textSize="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/editText"
+            app:layout_constraintStart_toStartOf="@+id/textViewC"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
